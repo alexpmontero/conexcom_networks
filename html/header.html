@@ -1,0 +1,54 @@
+<h1>
+	<a id="headerlogo" href="http://conexcomnetworks.com/">
+	</a>
+</h1>
+<nav>
+	<ul>
+		<li><a class="cambio" href="http://conexcomnetworks.com/" data-seccion="index">Inicio</a></li>
+		<li><a class="cambio" href="acerca.html" data-seccion="acerca">Acerca de</a></li>
+		<li><a class="cambio" href="servicios.html" data-seccion="servicios">Servicios</a></li>
+		<li><a class="cambio" href="casos_exito.html" data-seccion="casos_exito">Casos de &Eacute;xito</a></li>
+		<li><a class="cambio" href="contacto.html"  data-seccion="contacto">Contacto</a></li>
+	</ul>
+</nav>
+
+<script>
+	function seccionActual()
+	{
+		var url = window.location.href;
+		console.log("url de la seccion",url);
+
+		$("a[data-seccion='index']").addClass("seccion_actual");
+
+		if(/index/.test(url))
+		{
+			$("a[data-seccion='index']").addClass("seccion_actual");
+			console.log("estoy en index");
+		}
+		else if(/acerca/.test(url))
+		{
+			$("a[data-seccion='acerca']").addClass("seccion_actual");
+			$("a[data-seccion='index']").removeClass("seccion_actual");
+			console.log("estoy en acerca");
+		}
+		else if(/servicios/.test(url))
+		{
+			$("a[data-seccion='servicios']").addClass("seccion_actual");
+			$("a[data-seccion='index']").removeClass("seccion_actual");
+			console.log("estoy en servicios");
+		}
+		else if (/casos_exito/.test(url))
+		{
+			$("a[data-seccion='casos_exito']").addClass("seccion_actual");
+			$("a[data-seccion='index']").removeClass("seccion_actual");
+			console.log("estoy en casos de exito");
+		}
+		else if (/contacto/.test(url))
+		{
+			$("a[data-seccion='contacto']").addClass("seccion_actual");
+			$("a[data-seccion='index']").removeClass("seccion_actual");
+			console.log("estoy en contacto");
+		}
+	}
+	seccionActual();
+</script>
